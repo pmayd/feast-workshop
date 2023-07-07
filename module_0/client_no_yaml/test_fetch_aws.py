@@ -3,11 +3,12 @@ from feast.repo_config import RegistryConfig
 
 # TODO: replace with your bucket
 repo_config = RepoConfig(
-    registry=RegistryConfig(path="s3://feast-workshop-danny/registry.pb"),
+    registry=RegistryConfig(path="s3://feast-workshop-nw-michael/registry.pb"),
     project="feast_demo_aws",
     provider="aws",
     offline_store="file",  # Could also be the OfflineStoreConfig e.g. FileOfflineStoreConfig
-    online_store="null",  # Could also be the OnlineStoreConfig e.g. RedisOnlineStoreConfig
+    online_store="null",# Could also be the OnlineStoreConfig e.g. RedisOnlineStoreConfig
+    entity_key_serialization_version=2
 )
 store = FeatureStore(config=repo_config)
 

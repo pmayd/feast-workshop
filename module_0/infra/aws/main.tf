@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "eu-central-1"
 }
 
 resource "aws_s3_bucket" "feast_bucket" {
@@ -7,10 +7,6 @@ resource "aws_s3_bucket" "feast_bucket" {
   force_destroy = true
 }
 
-resource "aws_s3_bucket_acl" "feast_bucket_acl" {
-  bucket = aws_s3_bucket.feast_bucket.bucket
-  acl    = "private"
-}
 
 resource "aws_s3_object" "driver_stats_upload" {
   bucket = aws_s3_bucket.feast_bucket.bucket
